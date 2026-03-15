@@ -1,0 +1,39 @@
+package com.coffeecafe.coffee.controller;
+
+import com.coffeecafe.coffee.entity.User;
+import com.coffeecafe.coffee.dto.SyncRequest;
+import com.coffeecafe.coffee.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/dashboard")
+@CrossOrigin(origins = "*")
+public class DashboardSyncController {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @GetMapping("/sync-profile")
+    public ResponseEntity<?> syncProfile(@RequestParam String email) {
+        System.out.println("DEBUG: syncProfile called for email: [" + email + "]");
+        return userRepository.findByEmail(email)
+                .map(user -> {
+                    Map<String, Object> map = new HashMap<>();
+                    map.put("id", user.getId());
+                    map.put("email", user.getEmail());
+                    map.put("firstName", user.getFirstName());
+                    map.put("lastName", user.getLastName());
+                    map.put("role", user.getRole());
+                    map.put("status", user.getStatus());
+                    map.put("cafeId", user.getCafe() != null ? user.getCafe().getId() : null);
+                    map.put("cafeName", user.getCafe() != null ? user.getCafe().getCafeName() : null);
+                    return ResponseEntity.ok(map);
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+}

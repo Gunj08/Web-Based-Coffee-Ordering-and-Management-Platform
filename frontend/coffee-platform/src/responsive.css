@@ -1,0 +1,287 @@
+/* ============================================================
+   RESPONSIVE.CSS — Global Media Query Utilities
+   Breakpoints:
+     Mobile : max-width 768px
+     Tablet : max-width 1024px
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ─── DASHBOARD LAYOUT ─────────────────────────────────── */
+/* Sidebar + content layout used in CustomerProfile, Chef, Waiter, CafeOwner */
+
+.dashboard-sidebar {
+  width: 280px;
+  background-color: #cbbcb2;
+  color: #4c3c34;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+}
+
+.dashboard-sidebar.closed {
+  transform: translateX(-100%);
+}
+
+.dashboard-main {
+  flex: 1;
+  margin-left: 280px;
+  padding: 40px 60px;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+/* Hamburger toggle button — hidden on desktop */
+.sidebar-toggle-btn {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 200;
+  background: #4c3c34;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Overlay for mobile sidebar */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 99;
+}
+
+/* ─── HEADER HAMBURGER ───────────────────────────────────── */
+.header-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+}
+
+.header-desktop-nav,
+.header-desktop-btns {
+  display: flex;
+}
+
+.header-mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: #111111;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  z-index: 1999;
+  border-top: 1px solid rgba(212,175,55,0.2);
+  padding: 10px 0;
+}
+
+.header-mobile-menu.open {
+  display: flex;
+}
+
+.header-mobile-nav-item {
+  padding: 14px 24px;
+  color: #E2D1C3;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.header-mobile-btn-row {
+  display: flex;
+  gap: 10px;
+  padding: 14px 24px;
+}
+
+/* ─── CONTACT CARD ─────────────────────────────────────── */
+.contact-card-flex {
+  display: flex;
+}
+
+/* ─── FOOTER GRID ──────────────────────────────────────── */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  max-width: 1300px;
+  margin: 0 auto 40px auto;
+}
+
+/* ─── MISC UTILITIES ───────────────────────────────────── */
+.responsive-card {
+  width: 420px;
+}
+
+/* ============================================================
+   TABLET — max-width: 1024px
+   ============================================================ */
+@media (max-width: 1024px) {
+  .dashboard-main {
+    padding: 30px 30px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================================
+   MOBILE — max-width: 768px
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  .header-hamburger {
+    display: block;
+  }
+
+  .header-desktop-nav,
+  .header-desktop-btns {
+    display: none !important;
+  }
+  /* SIDEBAR (Dashboard) */
+  .sidebar-toggle-btn {
+    display: block;
+  }
+
+  .dashboard-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .dashboard-sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 20px rgba(0,0,0,0.2);
+  }
+
+  .sidebar-overlay.open {
+    display: block;
+  }
+
+  .dashboard-main {
+    margin-left: 0;
+    padding: 70px 16px 30px 16px;
+  }
+
+  /* FOOTER */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* CONTACT CARD */
+  .contact-card-flex {
+    flex-direction: column;
+  }
+
+  /* RESPONSIVE CARD (Login) */
+  .responsive-card {
+    width: 90%;
+    max-width: 420px;
+  }
+
+  /* HOME PAGE */
+  .home-main-content {
+    flex-direction: column !important;
+  }
+
+  .home-image-panel {
+    display: none !important;
+  }
+
+  .home-sidebar {
+    padding: 40px 24px !important;
+    min-width: unset !important;
+  }
+
+  .home-about-section {
+    flex-direction: column !important;
+    padding: 60px 24px !important;
+    gap: 30px !important;
+  }
+
+  .home-about-sub {
+    border-left: none !important;
+    border-top: 2px solid #a27c5c !important;
+    padding-left: 0 !important;
+    padding-top: 20px !important;
+  }
+
+  .home-how-section {
+    padding: 60px 24px !important;
+  }
+
+  .home-roadmap-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+  }
+
+  .home-roadmap-line {
+    display: none !important;
+  }
+
+  .home-roadmap-step {
+    width: 100% !important;
+  }
+
+  .home-contact-card {
+    flex-direction: column !important;
+    margin: 0 16px !important;
+  }
+
+  .home-contact-form-left,
+  .home-contact-form-right {
+    padding: 30px 20px !important;
+  }
+
+  /* SIGNUP GRIDS */
+  .signup-grid-2col {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ADMIN TABLE */
+  .admin-table-wrapper {
+    overflow-x: auto;
+  }
+
+  /* DASHBOARD HEADER */
+  .dashboard-page-header {
+    flex-direction: column !important;
+    gap: 10px;
+    align-items: flex-start !important;
+  }
+
+  /* MENU CARD GRID */
+  .menu-card-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* CAFE CARD GRID */
+  .cafe-card-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

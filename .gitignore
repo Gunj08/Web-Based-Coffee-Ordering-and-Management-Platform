@@ -1,0 +1,67 @@
+# Compiled class files
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+compile_error.txt
+compile_error_utf8.txt
+compile_output.txt
+build_log.txt
+run.log
+server_log.txt
+
+# Frontend
+node_modules/
+dist/
+build/
+.eslintcache
+*.local
+
+# Environment variables
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+uploads/
+frontend/node_modules/
+frontend/coffee-platform/node_modules/
+frontend/coffee-platform/dist/
