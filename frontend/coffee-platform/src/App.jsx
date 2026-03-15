@@ -12,8 +12,11 @@ import CompleteProfile from './pages/CompleteProfile';
 import CustomerSignup from './pages/CustomerSignup';
 import SetPassword from './pages/SetPassword'; // Added missing import
 import CafeSignup from './pages/CafeSignup';     // Added missing import
+<<<<<<< HEAD
 import ChefDashboard from './pages/ChefDashboard';
 import WaiterDashboard from './pages/WaiterDashboard';
+=======
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
 
 import Admin from './pages/Admin';
 import CustomerProfile from './pages/CustomerProfile';
@@ -48,10 +51,13 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/customer-profile" element={<CustomerProfile />} />
         <Route path="/owner-profile" element={<CafeOwnerProfile />} />
+<<<<<<< HEAD
         <Route path="/chef-dashboard" element={<ChefDashboard />} />
         <Route path="/chef" element={<ChefDashboard />} />
         <Route path="/waiter-dashboard" element={<WaiterDashboard />} />
         <Route path="/waiter" element={<WaiterDashboard />} />
+=======
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
         
       </Routes>
     </Router>

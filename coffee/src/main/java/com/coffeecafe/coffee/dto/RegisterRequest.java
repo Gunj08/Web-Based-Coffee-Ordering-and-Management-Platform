@@ -60,6 +60,9 @@ public class RegisterRequest {
 
     // Summary field (optional)
     private String workExperience;
+<<<<<<< HEAD
 
     private Long cafeId;
+=======
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
 }

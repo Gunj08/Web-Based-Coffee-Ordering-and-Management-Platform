@@ -23,11 +23,14 @@ public class Order {
     private String tableNumber;
     private String paymentMethod;
     private LocalDateTime orderDate;
+<<<<<<< HEAD
     
     @Column(name = "status", nullable = false)
     private String status = "PENDING"; // PENDING, PREPARING, READY, DELIVERED, SERVED, CANCELLED
 
     private Long cafeId;
+=======
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "order_items", joinColumns = @JoinColumn(name = "order_id"))

@@ -24,6 +24,7 @@ public class MenuItemService {
         item.setCafe(cafe);
         return menuItemRepository.save(item);
     }
+<<<<<<< HEAD
 
     public void updateAvailability(Long itemId, boolean available) {
         MenuItem item = menuItemRepository.findById(itemId)
@@ -31,4 +32,6 @@ public class MenuItemService {
         item.setAvailable(available);
         menuItemRepository.save(item);
     }
+=======
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
 }

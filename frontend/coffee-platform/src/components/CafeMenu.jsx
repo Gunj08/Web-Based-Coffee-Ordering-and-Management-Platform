@@ -50,7 +50,11 @@ const CafeMenu = ({ cafe, onBack, onBookTable, addToBag, bag }) => {
             return (
               <div key={item.id} style={{ backgroundColor: '#fff', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
                 <img 
+<<<<<<< HEAD
                   src={(item.photos && item.photos.length > 0) ? item.photos[0] : (item.photo || 'https://via.placeholder.com/300x200?text=No+Image')} 
+=======
+                  src={item.photo || 'https://via.placeholder.com/300x200?text=No+Image'} 
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
                   alt={item.itemName} 
                   style={{ width: '100%', height: '180px', objectFit: 'cover' }} 
                 />

@@ -21,6 +21,7 @@ public class OrderService {
     public Page<Order> getHistory(Long customerId, int page, int size) {
         return orderRepository.findByCustomerIdOrderByOrderDateDesc(customerId, PageRequest.of(page, size));
     }
+<<<<<<< HEAD
 
     public List<Order> getOrdersByCafeAndStatuses(Long cafeId, String cafeName, List<String> statuses) {
         if (cafeId != null) {
@@ -35,4 +36,6 @@ public class OrderService {
         order.setStatus(status);
         return orderRepository.save(order);
     }
+=======
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
 }

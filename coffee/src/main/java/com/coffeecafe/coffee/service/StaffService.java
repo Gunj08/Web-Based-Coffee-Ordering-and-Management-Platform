@@ -3,12 +3,18 @@ package com.coffeecafe.coffee.service;
 import com.coffeecafe.coffee.dto.StaffRegisterRequest;
 import com.coffeecafe.coffee.entity.Cafe;
 import com.coffeecafe.coffee.entity.StaffProfile;
+<<<<<<< HEAD
 import com.coffeecafe.coffee.entity.User;
+=======
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
 import com.coffeecafe.coffee.repository.CafeRepository;
 import com.coffeecafe.coffee.repository.StaffProfileRepository;
 import com.coffeecafe.coffee.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
 import org.springframework.security.crypto.password.PasswordEncoder;
+=======
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
 import org.springframework.stereotype.Service;
 import java.nio.file.*;
 import java.util.List;
@@ -22,12 +28,15 @@ public class StaffService {
 
     @Autowired
     private CafeRepository cafeRepository;
+<<<<<<< HEAD
  
     @Autowired
     private UserRepository userRepository;
  
     @Autowired
     private PasswordEncoder passwordEncoder;
+=======
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
 
     public void completeStaffRegistration(StaffRegisterRequest request) {
         StaffProfile profile = new StaffProfile();
@@ -67,6 +76,7 @@ public class StaffService {
         Cafe cafe = cafeRepository.findById(request.getCafeId())
                 .orElseThrow(() -> new RuntimeException("Cafe not found with ID: " + request.getCafeId()));
         profile.setCafe(cafe);
+<<<<<<< HEAD
  
         // 5a. Create or Update a User (Account) for the Staff
         User user = userRepository.findByEmail(request.getEmail())
@@ -85,6 +95,9 @@ public class StaffService {
         User savedUser = userRepository.save(user);
         profile.setUser(savedUser);
  
+=======
+
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
         // 6. File Upload Logic
         if (request.getGovtProof() != null && !request.getGovtProof().isEmpty()) {
             try {
@@ -97,8 +110,13 @@ public class StaffService {
                 throw new RuntimeException("File upload failed", e);
             }
         }
+<<<<<<< HEAD
  
         // 7. SAVE StaffProfile
+=======
+
+        // 7. SAVE ONLY ONCE
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
         staffProfileRepository.save(profile);
     }
 

@@ -29,6 +29,7 @@ const Login = () => {
             // 2. FIXED ROLE-BASED ROUTING
             // We convert the role to lowercase to match "cafeowner" or "customer" safely
             const userRole = user.role ? user.role.toLowerCase() : '';
+<<<<<<< HEAD
             console.log("Login: Success - Identified Role:", userRole);
 
             if (userRole === 'cafeowner') {
@@ -43,6 +44,15 @@ const Login = () => {
             } else if (userRole === 'waiter') {
                 alert(`Welcome Waiter, ${user.firstName}!`);
                 navigate('/waiter-dashboard');
+=======
+
+            if (userRole === 'cafeowner') {
+                alert(`Welcome Cafe Owner, ${user.first_name}!`);
+                navigate('/owner-profile'); 
+            } else if (userRole === 'customer') {
+                alert(`Welcome back, ${user.first_name}!`);
+                navigate('/customer-profile');
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
             } else {
                 // Fallback if role is missing or unknown
                 navigate('/home');

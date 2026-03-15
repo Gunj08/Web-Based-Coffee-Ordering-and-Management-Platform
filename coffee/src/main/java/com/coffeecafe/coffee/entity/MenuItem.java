@@ -16,7 +16,10 @@ public class MenuItem {
     private Double price;
     private String description;
     private String category;
+<<<<<<< HEAD
     private boolean available = true;
+=======
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
 
     @ManyToOne
     @JoinColumn(name = "cafe_id")

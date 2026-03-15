@@ -16,7 +16,10 @@ public class TableEntity {
     private String tableNumber;
     private Integer capacity;
     private Double price;
+<<<<<<< HEAD
     private String status = "Available"; // Available, Occupied, Booked
+=======
+>>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
 
     @ElementCollection
     @CollectionTable(name = "table_images", joinColumns = @JoinColumn(name = "table_id"))
