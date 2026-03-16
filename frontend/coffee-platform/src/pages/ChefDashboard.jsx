@@ -91,7 +91,16 @@ const ChefDashboard = () => {
             padding: '12px 24px', borderRadius: '8px', border: 'none',
             backgroundColor: colors.coffee, color: 'white', fontWeight: 'bold',
             cursor: 'pointer', width: '100%'
-        }
+        },
+        grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '20px', justifyItems: 'center' },
+        tableNode: (status) => ({
+            width: '120px', height: '120px', borderRadius: '50%',
+            display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
+            backgroundColor: status === 'Occupied' ? colors.latte : colors.white,
+            border: `3px solid ${status === 'Occupied' ? colors.accent : '#E0E0E0'}`,
+            color: colors.coffee, cursor: 'default',
+            boxShadow: '0 4px 10px rgba(0,0,0,0.05)', transition: 'all 0.3s'
+        })
     };
 
     const formatTime = (dateString) => {
@@ -106,6 +115,7 @@ const ChefDashboard = () => {
             else if (activeTab === 'ready') fetchOrders(['READY']);
             else if (activeTab === 'history') fetchOrders(['SERVED', 'COMPLETED']);
             else if (activeTab === 'menu') fetchMenu();
+            else if (activeTab === 'map') fetchTables();
             // No fetch needed for 'profile' tab
         };
 
@@ -294,6 +304,9 @@ const ChefDashboard = () => {
                     </div>
                     <div style={styles.navItem(activeTab === 'ready')} onClick={() => { setActiveTab('ready'); setSidebarOpen(false); }}>
                         <span style={{ fontSize: '18px' }}>✅</span> Ready for Pickup
+                    </div>
+                    <div style={styles.navItem(activeTab === 'map')} onClick={() => { setActiveTab('map'); setSidebarOpen(false); }}>
+                        <span style={{ fontSize: '18px' }}>🏢</span> Floor Plan
                     </div>
                     <div style={styles.navItem(activeTab === 'menu')} onClick={() => { setActiveTab('menu'); setSidebarOpen(false); }}>
                         <span style={{ fontSize: '18px' }}>📜</span> Menu Control
