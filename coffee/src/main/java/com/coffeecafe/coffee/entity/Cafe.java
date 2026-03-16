@@ -29,6 +29,10 @@ public class Cafe {
     private String businessType;
     private String fssaiLicenseNumber;
     private String gstNumber;
+    private String upiId;
+    private String accountHolderName;
+    private String accountNumber;
+    private String ifscCode;
 
     // Media
     @ElementCollection
@@ -80,6 +84,18 @@ public class Cafe {
 
     public String getGstNumber() { return gstNumber; }
     public void setGstNumber(String gstNumber) { this.gstNumber = gstNumber; }
+
+    public String getUpiId() { return upiId; }
+    public void setUpiId(String upiId) { this.upiId = upiId; }
+
+    public String getAccountHolderName() { return accountHolderName; }
+    public void setAccountHolderName(String accountHolderName) { this.accountHolderName = accountHolderName; }
+
+    public String getAccountNumber() { return accountNumber; }
+    public void setAccountNumber(String accountNumber) { this.accountNumber = accountNumber; }
+
+    public String getIfscCode() { return ifscCode; }
+    public void setIfscCode(String ifscCode) { this.ifscCode = ifscCode; }
 
     public List<String> getCafeImages() { return cafeImages; }
     public void setCafeImages(List<String> cafeImages) { this.cafeImages = cafeImages; }

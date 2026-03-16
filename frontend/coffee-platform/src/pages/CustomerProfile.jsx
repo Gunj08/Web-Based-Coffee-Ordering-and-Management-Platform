@@ -363,6 +363,7 @@ const CustomerProfile = () => {
 
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
+  const [lastOrder, setLastOrder] = useState(null);
   const pageSize = 5;
 // Search & Filter States
 const [searchQuery, setSearchQuery] = useState('');
@@ -663,17 +664,13 @@ const filteredCafes = cafes.filter(cafe => {
 
 
       if (response.ok) {
-
+        const savedOrder = await response.json();
         alert(`Order Placed Successfully! Total: ₹${totalAmount}`);
-
+        setLastOrder(savedOrder);
         setBag([]);
-
         setSelectedTable(null);
-
         fetchOrderHistory();
-
-        setView('orders');
-
+        setView('receipt');
       }
 
     } catch (error) {
@@ -1258,6 +1255,34 @@ const filteredCafes = cafes.filter(cafe => {
 
                 <div style={styles.paymentOption(paymentMethod === 'GPay')} onClick={() => setPaymentMethod('GPay')}><Wallet size={20} /> GPay / UPI</div>
 
+                {paymentMethod === 'GPay' && selectedCafe && (
+                  <div style={{ 
+                    marginTop: '20px', 
+                    padding: '20px', 
+                    backgroundColor: '#fff', 
+                    borderRadius: '12px', 
+                    textAlign: 'center',
+                    border: '1px solid #eee',
+                    boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.02)'
+                  }}>
+                    <p style={{ marginBottom: '15px', color: colors.coffee, fontWeight: 'bold' }}>Scan to Pay</p>
+                    <div style={{ 
+                      backgroundColor: '#fff', 
+                      padding: '10px', 
+                      borderRadius: '8px', 
+                      display: 'inline-block',
+                      boxShadow: '0 4px 15px rgba(0,0,0,0.06)'
+                    }}>
+                      <img 
+                        src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(`upi://pay?pa=${selectedCafe.upiId || 'test@upi'}&pn=${selectedCafe.cafeName}&am=${calculateGrandTotal()}&cu=INR`)}`}
+                        alt="Payment QR Code"
+                        style={{ width: '180px', height: '180px' }}
+                      />
+                    </div>
+                    <p style={{ marginTop: '10px', fontSize: '12px', color: '#888' }}>UPI ID: {selectedCafe.upiId || 'test@upi'}</p>
+                  </div>
+                )}
+
                 <div style={styles.paymentOption(paymentMethod === 'Card')} onClick={() => setPaymentMethod('Card')}><CreditCard size={20} /> Credit/Debit Card</div>
 
                 <div style={styles.paymentOption(paymentMethod === 'Cash')} onClick={() => setPaymentMethod('Cash')}><Banknote size={20} /> Pay at Counter</div>
@@ -1268,6 +1293,87 @@ const filteredCafes = cafes.filter(cafe => {
 
             <button onClick={handleConfirmOrder} style={{ ...styles.actionBtn, width: '100%', marginTop: '20px', padding: '20px' }}>COMPLETE TRANSACTION</button>
 
+          </div>
+        )}
+
+        {view === 'receipt' && lastOrder && (
+          <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
+            <div id="receipt-content" style={{ 
+              backgroundColor: '#fff', 
+              padding: '40px', 
+              borderRadius: '8px', 
+              boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+              textAlign: 'left',
+              fontFamily: 'monospace',
+              color: '#333'
+            }}>
+              <h2 style={{ textAlign: 'center', marginBottom: '10px' }}>☕ {lastOrder.cafeName}</h2>
+              <p style={{ textAlign: 'center', fontSize: '14px', marginBottom: '20px' }}>Order Receipt</p>
+              
+              <div style={{ borderTop: '1px dashed #ccc', borderBottom: '1px dashed #ccc', padding: '15px 0', marginBottom: '20px' }}>
+                <p><strong>Order ID:</strong> #{lastOrder.id}</p>
+                <p><strong>Date:</strong> {new Date().toLocaleString()}</p>
+                <p><strong>Customer:</strong> {lastOrder.customerName}</p>
+                <p><strong>Order Type:</strong> {lastOrder.orderType}</p>
+                {lastOrder.tableNumber !== "N/A" && <p><strong>Table:</strong> {lastOrder.tableNumber}</p>}
+              </div>
+
+              <table style={{ width: '100%', marginBottom: '20px' }}>
+                <thead>
+                  <tr style={{ borderBottom: '1px solid #eee' }}>
+                    <th style={{ textAlign: 'left', padding: '5px 0' }}>Item</th>
+                    <th style={{ textAlign: 'right', padding: '5px 0' }}>Amt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lastOrder.items.map((item, idx) => (
+                    <tr key={idx}>
+                      <td style={{ padding: '5px 0' }}>{item}</td>
+                      <td style={{ textAlign: 'right', padding: '5px 0' }}>-</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
+              <div style={{ borderTop: '1px solid #eee', paddingTop: '10px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: '18px' }}>
+                  <span>Grand Total</span>
+                  <span>₹{lastOrder.totalAmount}</span>
+                </div>
+                <p style={{ fontSize: '12px', marginTop: '5px' }}>Paid via: {lastOrder.paymentMethod}</p>
+              </div>
+
+              <div style={{ textAlign: 'center', marginTop: '30px', fontSize: '12px', color: '#888' }}>
+                <p>Thank you for visiting {lastOrder.cafeName}!</p>
+                <p>Please visit again soon.</p>
+              </div>
+            </div>
+
+            <div style={{ marginTop: '30px', display: 'flex', gap: '15px', justifyContent: 'center' }} className="no-print">
+              <button 
+                onClick={() => window.print()}
+                style={{ ...styles.actionBtn, padding: '12px 30px', backgroundColor: colors.accent }}
+              >
+                Print Receipt
+              </button>
+              <button 
+                onClick={() => setView('cafe-list')}
+                style={{ ...styles.actionBtn, padding: '12px 30px' }}
+              >
+                Back to Home
+              </button>
+            </div>
+            
+            <style>
+              {`
+                @media print {
+                  body * { visibility: hidden; }
+                  #receipt-content, #receipt-content * { visibility: visible; }
+                  #receipt-content { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none; }
+                  .no-print { display: none !important; }
+                }
+              `}
+            </style>
           </div>
         )}
       </main>

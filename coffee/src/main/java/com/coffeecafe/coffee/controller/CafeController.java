@@ -59,6 +59,10 @@ public class CafeController {
             cafe.setCafeName(cafeDetails.getCafeName());
             cafe.setOwnerName(cafeDetails.getOwnerName());
             cafe.setCafeImages(cafeDetails.getCafeImages());
+            cafe.setUpiId(cafeDetails.getUpiId());
+            cafe.setAccountHolderName(cafeDetails.getAccountHolderName());
+            cafe.setAccountNumber(cafeDetails.getAccountNumber());
+            cafe.setIfscCode(cafeDetails.getIfscCode());
             return ResponseEntity.ok(cafeRepository.save(cafe));
         }).orElse(ResponseEntity.notFound().build());
     }
