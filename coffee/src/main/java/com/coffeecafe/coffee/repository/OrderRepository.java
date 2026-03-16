@@ -8,9 +8,7 @@ import org.springframework.data.domain.Pageable;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
     Page<Order> findByCustomerIdOrderByOrderDateDesc(Long customerId, Pageable pageable);
-<<<<<<< HEAD
     List<Order> findByCafeIdAndStatusIn(Long cafeId, List<String> status);
     List<Order> findByCafeNameAndStatusIn(String cafeName, List<String> status);
-=======
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
 }

@@ -20,22 +20,16 @@ public class AdminController {
     // 1. Get all users waiting for approval
     // URL: http://localhost:8080/users/status/PENDING
     @GetMapping("/status/{status}")
-<<<<<<< HEAD
     public List<User> getPendingUsers(@PathVariable("status") String status) {
-=======
-    public List<User> getPendingUsers(@PathVariable String status) {
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
         return userService.getUsersByStatus(status);
     }
 
     // 2. Approve a user
     // URL: http://localhost:8080/users/approve/{userId}
     @PostMapping("/approve/{userId}")
-<<<<<<< HEAD
     public ResponseEntity<?> approveUser(@PathVariable("userId") Long userId) {
-=======
-    public ResponseEntity<?> approveUser(@PathVariable Long userId) {
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
         try {
             userService.approveUser(userId);
             return ResponseEntity.ok(new ApiResponse("User approved successfully"));
@@ -47,11 +41,8 @@ public class AdminController {
     // 3. Deny a user
     // URL: http://localhost:8080/users/deny/{userId}
     @PostMapping("/deny/{userId}")
-<<<<<<< HEAD
     public ResponseEntity<?> denyUser(@PathVariable("userId") Long userId) {
-=======
-    public ResponseEntity<?> denyUser(@PathVariable Long userId) {
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
         try {
             userService.denyUser(userId);
             return ResponseEntity.ok(new ApiResponse("User denied successfully"));

@@ -18,11 +18,8 @@ public class TableController {
 
     // This matches the fetch URL in your React code
     @GetMapping("/cafe/{cafeId}")
-<<<<<<< HEAD
     public ResponseEntity<List<TableEntity>> getTablesByCafe(@PathVariable("cafeId") Long cafeId) {
-=======
-    public ResponseEntity<List<TableEntity>> getTablesByCafe(@PathVariable Long cafeId) {
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
         List<TableEntity> tables = tableService.getTablesByCafeId(cafeId);
         return ResponseEntity.ok(tables);
     }

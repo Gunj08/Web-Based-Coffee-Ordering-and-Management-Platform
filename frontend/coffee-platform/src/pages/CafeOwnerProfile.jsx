@@ -208,30 +208,7 @@ const badgeStyle = {
   fontWeight: 'bold'
 };
 
-<<<<<<< HEAD
 // Redundant method removed to avoid confusion. Use handleAddMenu instead.
-=======
- const handleSaveMenuItem = async (e) => {
-    e.preventDefault();
-    const cafeId = selectedCafe.id; 
-
-    try {
-        const response = await fetch(`http://localhost:8080/api/menu/add/${cafeId}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(menuItemData),
-        });
-
-        if (response.ok) {
-            alert("Item added successfully!");
-        }
-    } catch (error) {
-        console.error("Error saving menu item:", error);
-    }
-}; 
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
 
 // - Staff state-
 const [staffList, setStaffList] = useState([]);
@@ -477,11 +454,7 @@ const [staffForm, setStaffForm] = useState({
   price: '', 
   category: '', 
   description: '', 
-<<<<<<< HEAD
   photos: [] // Updated to match MenuItem entity's List<String>
-=======
-  photo: null 
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
 }); 
 
   // --- REGISTRATION FORM STATE ---
@@ -763,17 +736,10 @@ const handleAddMenu = async (e) => {
     // 1. Prepare the data matching your MenuItem entity
     const menuData = {
       itemName: newItem.itemName,
-<<<<<<< HEAD
       price: Number(newItem.price), // Ensure price is sent as a number
       description: newItem.description,
       category: newItem.category,
       photos: newItem.photos || [] // Array of base64 strings
-=======
-      price: newItem.price,
-      description: newItem.description,
-      category: newItem.category,
-      photos: newItem.photos // Array of base64 strings for your @ElementCollection
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
     };
 
     // 2. Call the specific MenuItemController endpoint with the cafeId in the URL
@@ -782,23 +748,15 @@ const handleAddMenu = async (e) => {
       menuData
     );
 
-<<<<<<< HEAD
     setMenuItems(prev => [...prev, response.data]);
-=======
-    setMenuItems([...menuItems, response.data]);
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
     
     // 3. Reset form
     setNewItem({ itemName: '', price: '', description: '', category: '', photos: [] });
     alert("Item added successfully!");
   } catch (error) {
     console.error("Error saving menu:", error);
-<<<<<<< HEAD
     const errorMsg = error.response?.data?.message || error.response?.data || "Failed to save menu item.";
     alert(`Error: ${errorMsg}. Check console for details.`);
-=======
-    alert("Failed to save menu item. Check console for details.");
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
   }
 };
 
@@ -1383,11 +1341,8 @@ const handleRevokeStaff = async (staffId) => {
           onClick={(e) => {
             e.stopPropagation();
             setSelectedCafe(cafe); 
-<<<<<<< HEAD
             setNewItem({ itemName: '', price: '', category: '', description: '', photos: [] }); 
-=======
-            setNewItem({ itemName: '', price: '', category: '', description: '', photo: null }); 
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
             setActiveSection('menu'); 
           }}
           style={{

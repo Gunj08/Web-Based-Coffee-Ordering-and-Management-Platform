@@ -2,7 +2,6 @@ package com.coffeecafe.coffee.config;
 
 import com.coffeecafe.coffee.entity.*;
 import com.coffeecafe.coffee.repository.*;
-import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,7 +9,6 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 
 @Configuration
-@RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
 
     private final CafeRepository cafeRepository;
@@ -19,6 +17,18 @@ public class DataInitializer implements CommandLineRunner {
     private final OrderRepository orderRepository;
     private final UserRepository userRepository;
     private final org.springframework.security.crypto.password.PasswordEncoder passwordEncoder;
+
+    public DataInitializer(CafeRepository cafeRepository, MenuItemRepository menuItemRepository, 
+                           TableRepository tableRepository, OrderRepository orderRepository, 
+                           UserRepository userRepository, 
+                           org.springframework.security.crypto.password.PasswordEncoder passwordEncoder) {
+        this.cafeRepository = cafeRepository;
+        this.menuItemRepository = menuItemRepository;
+        this.tableRepository = tableRepository;
+        this.orderRepository = orderRepository;
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Override
     public void run(String... args) throws Exception {

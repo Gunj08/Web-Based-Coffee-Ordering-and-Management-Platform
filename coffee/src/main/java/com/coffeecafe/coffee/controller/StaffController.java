@@ -29,20 +29,14 @@ public class StaffController {
     }
 
     @GetMapping("/cafe/{cafeId}")
-<<<<<<< HEAD
     public ResponseEntity<List<StaffProfile>> getStaffByCafe(@PathVariable("cafeId") Long cafeId) {
-=======
-    public ResponseEntity<List<StaffProfile>> getStaffByCafe(@PathVariable Long cafeId) {
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
         return ResponseEntity.ok(staffService.getStaffByCafeId(cafeId));
     }
 
     @DeleteMapping("/{id}")
-<<<<<<< HEAD
     public ResponseEntity<?> deleteStaff(@PathVariable("id") Long id) {
-=======
-    public ResponseEntity<?> deleteStaff(@PathVariable Long id) {
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
         try {
             staffService.deleteStaffById(id);
             return ResponseEntity.ok().build();

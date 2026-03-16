@@ -5,8 +5,6 @@ import com.coffeecafe.coffee.repository.OrderRepository;
 import com.coffeecafe.coffee.repository.CafeRepository;
 import com.coffeecafe.coffee.repository.UserRepository;
 
-import lombok.RequiredArgsConstructor;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -15,14 +13,17 @@ import java.util.concurrent.atomic.AtomicInteger;
 @RestController
 @RequestMapping("/api/sync")
 @CrossOrigin(origins = "*")
-@RequiredArgsConstructor
 public class DataSyncController {
 
     private final OrderRepository orderRepository;
     private final CafeRepository cafeRepository;
     private final UserRepository userRepository;
 
-
+    public DataSyncController(OrderRepository orderRepository, CafeRepository cafeRepository, UserRepository userRepository) {
+        this.orderRepository = orderRepository;
+        this.cafeRepository = cafeRepository;
+        this.userRepository = userRepository;
+    }
 
     @PostMapping("/orders/fix-cafe-ids")
     public ResponseEntity<String> fixCafeIds() {
@@ -77,9 +78,3 @@ public class DataSyncController {
         return ResponseEntity.ok("Successfully scanned " + users.size() + " users. Fixed " + count.get() + " staff-cafe associations.");
     }
 }
-
-
-
-
-
-

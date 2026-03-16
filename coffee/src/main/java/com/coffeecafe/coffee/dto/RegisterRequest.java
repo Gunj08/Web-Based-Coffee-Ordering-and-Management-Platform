@@ -3,9 +3,7 @@ package com.coffeecafe.coffee.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 import jakarta.validation.constraints.*;
-import lombok.Data;
 
-@Data
 public class RegisterRequest {
 
     // Step 1: Personal & Account
@@ -60,9 +58,87 @@ public class RegisterRequest {
 
     // Summary field (optional)
     private String workExperience;
-<<<<<<< HEAD
 
     private Long cafeId;
-=======
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
+    public String getFirstName() { return firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+
+    public String getLastName() { return lastName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
+
+    public LocalDate getDob() { return dob; }
+    public void setDob(LocalDate dob) { this.dob = dob; }
+
+    public String getGender() { return gender; }
+    public void setGender(String gender) { this.gender = gender; }
+
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+
+    public String getPhoneNumber() { return phoneNumber; }
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+
+    public String getPlotNo() { return plotNo; }
+    public void setPlotNo(String plotNo) { this.plotNo = plotNo; }
+
+    public String getArea() { return area; }
+    public void setArea(String area) { this.area = area; }
+
+    public String getStreet() { return street; }
+    public void setStreet(String street) { this.street = street; }
+
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city = city; }
+
+    public String getPincode() { return pincode; }
+    public void setPincode(String pincode) { this.pincode = pincode; }
+
+    public String getInstitution() { return institution; }
+    public void setInstitution(String institution) { this.institution = institution; }
+
+    public String getDegree() { return degree; }
+    public void setDegree(String degree) { this.degree = degree; }
+
+    public String getYear() { return year; }
+    public void setYear(String year) { this.year = year; }
+
+    public String getJobTitle() { return jobTitle; }
+    public void setJobTitle(String jobTitle) { this.jobTitle = jobTitle; }
+
+    public String getCompanyName() { return companyName; }
+    public void setCompanyName(String companyName) { this.companyName = companyName; }
+
+    public String getEmploymentType() { return employmentType; }
+    public void setEmploymentType(String employmentType) { this.employmentType = employmentType; }
+
+    public String getTotalYears() { return totalYears; }
+    public void setTotalYears(String totalYears) { this.totalYears = totalYears; }
+
+    public String getStartDate() { return startDate; }
+    public void setStartDate(String startDate) { this.startDate = startDate; }
+
+    public String getEndDate() { return endDate; }
+    public void setEndDate(String endDate) { this.endDate = endDate; }
+
+    public boolean isCurrentlyWorking() { return currentlyWorking; }
+    public void setCurrentlyWorking(boolean currentlyWorking) { this.currentlyWorking = currentlyWorking; }
+
+    public String getResponsibilities() { return responsibilities; }
+    public void setResponsibilities(String responsibilities) { this.responsibilities = responsibilities; }
+
+    public String getAchievements() { return achievements; }
+    public void setAchievements(String achievements) { this.achievements = achievements; }
+
+    public String getWorkExperience() { return workExperience; }
+    public void setWorkExperience(String workExperience) { this.workExperience = workExperience; }
+
+    public Long getCafeId() { return cafeId; }
+    public void setCafeId(Long cafeId) { this.cafeId = cafeId; }
 }

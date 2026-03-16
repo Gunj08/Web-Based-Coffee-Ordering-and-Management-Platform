@@ -15,10 +15,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
-<<<<<<< HEAD
 import java.util.Optional;
-=======
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
 import java.util.UUID;
 
 @Service
@@ -28,12 +26,10 @@ public class UserService {
     private UserRepository userRepository;
 
     @Autowired
-<<<<<<< HEAD
     private com.coffeecafe.coffee.repository.CafeRepository cafeRepository;
 
     @Autowired
-=======
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
     private PasswordEncoder passwordEncoder;
 
     @Autowired
@@ -101,13 +97,11 @@ public class UserService {
             }
         }
 
-<<<<<<< HEAD
         if (request.getCafeId() != null) {
             cafeRepository.findById(request.getCafeId()).ifPresent(user::setCafe);
         }
 
-=======
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
         userRepository.save(user);
     }
 
@@ -119,11 +113,8 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
         // Generate 8-character temporary password
-<<<<<<< HEAD
         String tempPassword = UUID.randomUUID().toString().substring(0, 8);
-=======
-        String tempPassword = java.util.UUID.randomUUID().toString().substring(0, 8);
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
 
         user.setPassword(passwordEncoder.encode(tempPassword));
         user.setStatus("APPROVED");
@@ -176,7 +167,6 @@ public class UserService {
      * Standard Login verification
      */
     public User loginUser(String email, String password) {
-<<<<<<< HEAD
         String cleanEmail = (email != null) ? email.trim() : "";
         String cleanPwd = (password != null) ? password.trim() : "";
         
@@ -230,26 +220,7 @@ public class UserService {
         });
     }
  
-=======
-        System.out.println("--- Login Attempt ---");
-        System.out.println("Email: " + email);
 
-        return userRepository.findByEmail(email).map(user -> {
-            boolean isMatch = passwordEncoder.matches(password, user.getPassword());
-
-            System.out.println("Password Match: " + isMatch);
-            System.out.println("User Status: " + user.getStatus());
-            System.out.println("Stored Hash: " + user.getPassword());
-
-            if (isMatch) return user;
-            return null;
-        }).orElseGet(() -> {
-            System.out.println("User not found in DB");
-            return null;
-        });
-    }
-
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
     /**
      * Helper method to send emails via Gmail SMTP
      */

@@ -100,10 +100,8 @@ public class UserController {
             request.setCurrentlyWorking(currentlyWorking);
             request.setResponsibilities(responsibilities);
             request.setAchievements(achievements);
-<<<<<<< HEAD
             request.setCafeId(cafeId);
-=======
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
 
             // 2. Call the service to save to DB
             userService.registerUser(request, govtProof);
@@ -134,7 +132,6 @@ public class UserController {
     }
 
     @PostMapping("/forgot-password")
-<<<<<<< HEAD
     public ResponseEntity<?> forgotPassword(@RequestParam("email") String email) {
         emailService.sendResetLink(email);
         return ResponseEntity.ok(new ApiResponse("Reset link sent successfully", true));
@@ -145,10 +142,5 @@ public class UserController {
         userService.fixExistingPasswords();
         return ResponseEntity.ok(new ApiResponse("Passwords fixed successfully", true));
     }
-=======
-    public ResponseEntity<?> forgotPassword(@RequestParam String email) {
-        emailService.sendResetLink(email);
-        return ResponseEntity.ok(new ApiResponse("Reset link sent successfully", true));
-    }
->>>>>>> 2b8e9abdb83ddba996deae458df54f7e2258da81
+
 }

@@ -1,0 +1,636 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.coffeecafe:coffee >------------------------
+[INFO] Building coffee 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ coffee ---
+[INFO] Deleting C:\Users\gunja\OneDrive\Desktop\coffee-project\coffee\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ coffee ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ coffee ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 40 source files with javac [debug parameters release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[25,45] cannot find symbol
+  symbol:   method getRole()
+  location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[25,90] cannot find symbol
+  symbol:   method getRole()
+  location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,51] cannot find symbol
+  symbol:   method getId()
+  location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,81] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,113] cannot find symbol
+  symbol:   method getRole()
+  location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,147] cannot find symbol
+  symbol:   method getCafe()
+  location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,172] cannot find symbol
+  symbol:   method getCafe()
+  location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,226] cannot find symbol
+  symbol:   method getCafe()
+  location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,251] cannot find symbol
+  symbol:   method getCafe()
+  location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[32,49] cannot find symbol
+  symbol:   method getId()
+  location: variable order of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[32,83] cannot find symbol
+  symbol:   method getCustomerName()
+  location: variable order of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[32,125] cannot find symbol
+  symbol:   method getStatus()
+  location: variable order of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[32,161] cannot find symbol
+  symbol:   method getCafeId()
+  location: variable order of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[32,199] cannot find symbol
+  symbol:   method getCafeName()
+  location: variable order of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[31,20] cannot find symbol
+  symbol:   method setCafeName(java.lang.String)
+  location: variable newCafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[32,20] cannot find symbol
+  symbol:   method setOwnerName(java.lang.String)
+  location: variable newCafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[38,18] cannot find symbol
+  symbol:   method setItemName(java.lang.String)
+  location: variable item1 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[39,18] cannot find symbol
+  symbol:   method setCategory(java.lang.String)
+  location: variable item1 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[40,18] cannot find symbol
+  symbol:   method setPrice(double)
+  location: variable item1 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[41,18] cannot find symbol
+  symbol:   method setAvailable(boolean)
+  location: variable item1 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[42,18] cannot find symbol
+  symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+  location: variable item1 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[45,18] cannot find symbol
+  symbol:   method setItemName(java.lang.String)
+  location: variable item2 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[46,18] cannot find symbol
+  symbol:   method setCategory(java.lang.String)
+  location: variable item2 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[47,18] cannot find symbol
+  symbol:   method setPrice(double)
+  location: variable item2 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[48,18] cannot find symbol
+  symbol:   method setAvailable(boolean)
+  location: variable item2 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[49,18] cannot find symbol
+  symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+  location: variable item2 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[52,18] cannot find symbol
+  symbol:   method setItemName(java.lang.String)
+  location: variable item3 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[53,18] cannot find symbol
+  symbol:   method setCategory(java.lang.String)
+  location: variable item3 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[54,18] cannot find symbol
+  symbol:   method setPrice(double)
+  location: variable item3 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[55,18] cannot find symbol
+  symbol:   method setAvailable(boolean)
+  location: variable item3 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[56,18] cannot find symbol
+  symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+  location: variable item3 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[63,19] cannot find symbol
+  symbol:   method setTableNumber(java.lang.String)
+  location: variable table1 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[64,19] cannot find symbol
+  symbol:   method setCapacity(int)
+  location: variable table1 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[65,19] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable table1 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[66,19] cannot find symbol
+  symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+  location: variable table1 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[69,19] cannot find symbol
+  symbol:   method setTableNumber(java.lang.String)
+  location: variable table2 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[70,19] cannot find symbol
+  symbol:   method setCapacity(int)
+  location: variable table2 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[71,19] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable table2 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[72,19] cannot find symbol
+  symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+  location: variable table2 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[79,19] cannot find symbol
+  symbol:   method setCustomerName(java.lang.String)
+  location: variable order1 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[80,19] cannot find symbol
+  symbol:   method setTableNumber(java.lang.String)
+  location: variable order1 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[81,19] cannot find symbol
+  symbol:   method setItems(java.util.List<java.lang.String>)
+  location: variable order1 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[82,19] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable order1 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[83,19] cannot find symbol
+  symbol:   method setTotalAmount(double)
+  location: variable order1 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[84,19] cannot find symbol
+  symbol:   method setOrderDate(java.time.LocalDateTime)
+  location: variable order1 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[85,34] cannot find symbol
+  symbol:   method getId()
+  location: variable cafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[86,36] cannot find symbol
+  symbol:   method getCafeName()
+  location: variable cafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[89,19] cannot find symbol
+  symbol:   method setCustomerName(java.lang.String)
+  location: variable order2 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[90,19] cannot find symbol
+  symbol:   method setTableNumber(java.lang.String)
+  location: variable order2 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[91,19] cannot find symbol
+  symbol:   method setItems(java.util.List<java.lang.String>)
+  location: variable order2 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[92,19] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable order2 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[93,19] cannot find symbol
+  symbol:   method setTotalAmount(double)
+  location: variable order2 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[94,19] cannot find symbol
+  symbol:   method setOrderDate(java.time.LocalDateTime)
+  location: variable order2 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[95,34] cannot find symbol
+  symbol:   method getId()
+  location: variable cafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[96,36] cannot find symbol
+  symbol:   method getCafeName()
+  location: variable cafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[99,19] cannot find symbol
+  symbol:   method setCustomerName(java.lang.String)
+  location: variable order3 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[100,19] cannot find symbol
+  symbol:   method setTableNumber(java.lang.String)
+  location: variable order3 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[101,19] cannot find symbol
+  symbol:   method setItems(java.util.List<java.lang.String>)
+  location: variable order3 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[102,19] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable order3 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[103,19] cannot find symbol
+  symbol:   method setTotalAmount(double)
+  location: variable order3 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[104,19] cannot find symbol
+  symbol:   method setOrderDate(java.time.LocalDateTime)
+  location: variable order3 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[105,34] cannot find symbol
+  symbol:   method getId()
+  location: variable cafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[106,36] cannot find symbol
+  symbol:   method getCafeName()
+  location: variable cafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[114,17] cannot find symbol
+  symbol:   method setFirstName(java.lang.String)
+  location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[115,17] cannot find symbol
+  symbol:   method setLastName(java.lang.String)
+  location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[116,17] cannot find symbol
+  symbol:   method setEmail(java.lang.String)
+  location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[117,17] cannot find symbol
+  symbol:   method setPassword(java.lang.String)
+  location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[118,17] cannot find symbol
+  symbol:   method setRole(java.lang.String)
+  location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[119,17] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[120,17] cannot find symbol
+  symbol:   method setPhoneNumber(java.lang.String)
+  location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[121,17] cannot find symbol
+  symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+  location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[127,19] cannot find symbol
+  symbol:   method setFirstName(java.lang.String)
+  location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[128,19] cannot find symbol
+  symbol:   method setLastName(java.lang.String)
+  location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[129,19] cannot find symbol
+  symbol:   method setEmail(java.lang.String)
+  location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[130,19] cannot find symbol
+  symbol:   method setPassword(java.lang.String)
+  location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[131,19] cannot find symbol
+  symbol:   method setRole(java.lang.String)
+  location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[132,19] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[133,19] cannot find symbol
+  symbol:   method setPhoneNumber(java.lang.String)
+  location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[134,19] cannot find symbol
+  symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+  location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[45,34] cannot find symbol
+  symbol:   method getFirstName()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[46,33] cannot find symbol
+  symbol:   method getLastName()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[47,30] cannot find symbol
+  symbol:   method getEmail()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[48,36] cannot find symbol
+  symbol:   method getPhoneNumber()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[49,31] cannot find symbol
+  symbol:   method getGender()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[50,28] cannot find symbol
+  symbol:   method getDob()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[51,29] cannot find symbol
+  symbol:   method getRole()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[52,56] cannot find symbol
+  symbol:   method getPassword()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[53,13] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[56,31] cannot find symbol
+  symbol:   method getPlotNo()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[57,29] cannot find symbol
+  symbol:   method getArea()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[58,29] cannot find symbol
+  symbol:   method getCity()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[59,32] cannot find symbol
+  symbol:   method getPincode()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[62,36] cannot find symbol
+  symbol:   method getInstitution()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[63,31] cannot find symbol
+  symbol:   method getDegree()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[64,36] cannot find symbol
+  symbol:   method getYear()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[67,33] cannot find symbol
+  symbol:   method getJobTitle()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[68,36] cannot find symbol
+  symbol:   method getCompanyName()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[69,39] cannot find symbol
+  symbol:   method getEmploymentType()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[70,35] cannot find symbol
+  symbol:   method getTotalYears()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[71,34] cannot find symbol
+  symbol:   method getStartDate()
+  location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.190 s
+[INFO] Finished at: 2026-03-16T14:29:59+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project coffee: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[25,45] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[25,90] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,51] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,81] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,113] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,147] cannot find symbol
+[ERROR]   symbol:   method getCafe()
+[ERROR]   location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,172] cannot find symbol
+[ERROR]   symbol:   method getCafe()
+[ERROR]   location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,226] cannot find symbol
+[ERROR]   symbol:   method getCafe()
+[ERROR]   location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[26,251] cannot find symbol
+[ERROR]   symbol:   method getCafe()
+[ERROR]   location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[32,49] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable order of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[32,83] cannot find symbol
+[ERROR]   symbol:   method getCustomerName()
+[ERROR]   location: variable order of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[32,125] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable order of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[32,161] cannot find symbol
+[ERROR]   symbol:   method getCafeId()
+[ERROR]   location: variable order of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/TestRunner.java:[32,199] cannot find symbol
+[ERROR]   symbol:   method getCafeName()
+[ERROR]   location: variable order of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[31,20] cannot find symbol
+[ERROR]   symbol:   method setCafeName(java.lang.String)
+[ERROR]   location: variable newCafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[32,20] cannot find symbol
+[ERROR]   symbol:   method setOwnerName(java.lang.String)
+[ERROR]   location: variable newCafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[38,18] cannot find symbol
+[ERROR]   symbol:   method setItemName(java.lang.String)
+[ERROR]   location: variable item1 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[39,18] cannot find symbol
+[ERROR]   symbol:   method setCategory(java.lang.String)
+[ERROR]   location: variable item1 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[40,18] cannot find symbol
+[ERROR]   symbol:   method setPrice(double)
+[ERROR]   location: variable item1 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[41,18] cannot find symbol
+[ERROR]   symbol:   method setAvailable(boolean)
+[ERROR]   location: variable item1 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[42,18] cannot find symbol
+[ERROR]   symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+[ERROR]   location: variable item1 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[45,18] cannot find symbol
+[ERROR]   symbol:   method setItemName(java.lang.String)
+[ERROR]   location: variable item2 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[46,18] cannot find symbol
+[ERROR]   symbol:   method setCategory(java.lang.String)
+[ERROR]   location: variable item2 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[47,18] cannot find symbol
+[ERROR]   symbol:   method setPrice(double)
+[ERROR]   location: variable item2 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[48,18] cannot find symbol
+[ERROR]   symbol:   method setAvailable(boolean)
+[ERROR]   location: variable item2 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[49,18] cannot find symbol
+[ERROR]   symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+[ERROR]   location: variable item2 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[52,18] cannot find symbol
+[ERROR]   symbol:   method setItemName(java.lang.String)
+[ERROR]   location: variable item3 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[53,18] cannot find symbol
+[ERROR]   symbol:   method setCategory(java.lang.String)
+[ERROR]   location: variable item3 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[54,18] cannot find symbol
+[ERROR]   symbol:   method setPrice(double)
+[ERROR]   location: variable item3 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[55,18] cannot find symbol
+[ERROR]   symbol:   method setAvailable(boolean)
+[ERROR]   location: variable item3 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[56,18] cannot find symbol
+[ERROR]   symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+[ERROR]   location: variable item3 of type com.coffeecafe.coffee.entity.MenuItem
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[63,19] cannot find symbol
+[ERROR]   symbol:   method setTableNumber(java.lang.String)
+[ERROR]   location: variable table1 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[64,19] cannot find symbol
+[ERROR]   symbol:   method setCapacity(int)
+[ERROR]   location: variable table1 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[65,19] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable table1 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[66,19] cannot find symbol
+[ERROR]   symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+[ERROR]   location: variable table1 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[69,19] cannot find symbol
+[ERROR]   symbol:   method setTableNumber(java.lang.String)
+[ERROR]   location: variable table2 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[70,19] cannot find symbol
+[ERROR]   symbol:   method setCapacity(int)
+[ERROR]   location: variable table2 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[71,19] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable table2 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[72,19] cannot find symbol
+[ERROR]   symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+[ERROR]   location: variable table2 of type com.coffeecafe.coffee.entity.TableEntity
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[79,19] cannot find symbol
+[ERROR]   symbol:   method setCustomerName(java.lang.String)
+[ERROR]   location: variable order1 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[80,19] cannot find symbol
+[ERROR]   symbol:   method setTableNumber(java.lang.String)
+[ERROR]   location: variable order1 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[81,19] cannot find symbol
+[ERROR]   symbol:   method setItems(java.util.List<java.lang.String>)
+[ERROR]   location: variable order1 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[82,19] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable order1 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[83,19] cannot find symbol
+[ERROR]   symbol:   method setTotalAmount(double)
+[ERROR]   location: variable order1 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[84,19] cannot find symbol
+[ERROR]   symbol:   method setOrderDate(java.time.LocalDateTime)
+[ERROR]   location: variable order1 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[85,34] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable cafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[86,36] cannot find symbol
+[ERROR]   symbol:   method getCafeName()
+[ERROR]   location: variable cafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[89,19] cannot find symbol
+[ERROR]   symbol:   method setCustomerName(java.lang.String)
+[ERROR]   location: variable order2 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[90,19] cannot find symbol
+[ERROR]   symbol:   method setTableNumber(java.lang.String)
+[ERROR]   location: variable order2 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[91,19] cannot find symbol
+[ERROR]   symbol:   method setItems(java.util.List<java.lang.String>)
+[ERROR]   location: variable order2 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[92,19] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable order2 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[93,19] cannot find symbol
+[ERROR]   symbol:   method setTotalAmount(double)
+[ERROR]   location: variable order2 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[94,19] cannot find symbol
+[ERROR]   symbol:   method setOrderDate(java.time.LocalDateTime)
+[ERROR]   location: variable order2 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[95,34] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable cafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[96,36] cannot find symbol
+[ERROR]   symbol:   method getCafeName()
+[ERROR]   location: variable cafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[99,19] cannot find symbol
+[ERROR]   symbol:   method setCustomerName(java.lang.String)
+[ERROR]   location: variable order3 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[100,19] cannot find symbol
+[ERROR]   symbol:   method setTableNumber(java.lang.String)
+[ERROR]   location: variable order3 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[101,19] cannot find symbol
+[ERROR]   symbol:   method setItems(java.util.List<java.lang.String>)
+[ERROR]   location: variable order3 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[102,19] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable order3 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[103,19] cannot find symbol
+[ERROR]   symbol:   method setTotalAmount(double)
+[ERROR]   location: variable order3 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[104,19] cannot find symbol
+[ERROR]   symbol:   method setOrderDate(java.time.LocalDateTime)
+[ERROR]   location: variable order3 of type com.coffeecafe.coffee.entity.Order
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[105,34] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable cafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[106,36] cannot find symbol
+[ERROR]   symbol:   method getCafeName()
+[ERROR]   location: variable cafe of type com.coffeecafe.coffee.entity.Cafe
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[114,17] cannot find symbol
+[ERROR]   symbol:   method setFirstName(java.lang.String)
+[ERROR]   location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[115,17] cannot find symbol
+[ERROR]   symbol:   method setLastName(java.lang.String)
+[ERROR]   location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[116,17] cannot find symbol
+[ERROR]   symbol:   method setEmail(java.lang.String)
+[ERROR]   location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[117,17] cannot find symbol
+[ERROR]   symbol:   method setPassword(java.lang.String)
+[ERROR]   location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[118,17] cannot find symbol
+[ERROR]   symbol:   method setRole(java.lang.String)
+[ERROR]   location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[119,17] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[120,17] cannot find symbol
+[ERROR]   symbol:   method setPhoneNumber(java.lang.String)
+[ERROR]   location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[121,17] cannot find symbol
+[ERROR]   symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+[ERROR]   location: variable chef of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[127,19] cannot find symbol
+[ERROR]   symbol:   method setFirstName(java.lang.String)
+[ERROR]   location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[128,19] cannot find symbol
+[ERROR]   symbol:   method setLastName(java.lang.String)
+[ERROR]   location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[129,19] cannot find symbol
+[ERROR]   symbol:   method setEmail(java.lang.String)
+[ERROR]   location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[130,19] cannot find symbol
+[ERROR]   symbol:   method setPassword(java.lang.String)
+[ERROR]   location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[131,19] cannot find symbol
+[ERROR]   symbol:   method setRole(java.lang.String)
+[ERROR]   location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[132,19] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[133,19] cannot find symbol
+[ERROR]   symbol:   method setPhoneNumber(java.lang.String)
+[ERROR]   location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/config/DataInitializer.java:[134,19] cannot find symbol
+[ERROR]   symbol:   method setCafe(com.coffeecafe.coffee.entity.Cafe)
+[ERROR]   location: variable waiter of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[45,34] cannot find symbol
+[ERROR]   symbol:   method getFirstName()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[46,33] cannot find symbol
+[ERROR]   symbol:   method getLastName()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[47,30] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[48,36] cannot find symbol
+[ERROR]   symbol:   method getPhoneNumber()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[49,31] cannot find symbol
+[ERROR]   symbol:   method getGender()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[50,28] cannot find symbol
+[ERROR]   symbol:   method getDob()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[51,29] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[52,56] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[53,13] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable user of type com.coffeecafe.coffee.entity.User
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[56,31] cannot find symbol
+[ERROR]   symbol:   method getPlotNo()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[57,29] cannot find symbol
+[ERROR]   symbol:   method getArea()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[58,29] cannot find symbol
+[ERROR]   symbol:   method getCity()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[59,32] cannot find symbol
+[ERROR]   symbol:   method getPincode()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[62,36] cannot find symbol
+[ERROR]   symbol:   method getInstitution()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[63,31] cannot find symbol
+[ERROR]   symbol:   method getDegree()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[64,36] cannot find symbol
+[ERROR]   symbol:   method getYear()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[67,33] cannot find symbol
+[ERROR]   symbol:   method getJobTitle()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[68,36] cannot find symbol
+[ERROR]   symbol:   method getCompanyName()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[69,39] cannot find symbol
+[ERROR]   symbol:   method getEmploymentType()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[70,35] cannot find symbol
+[ERROR]   symbol:   method getTotalYears()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] /C:/Users/gunja/OneDrive/Desktop/coffee-project/coffee/src/main/java/com/coffeecafe/coffee/service/UserService.java:[71,34] cannot find symbol
+[ERROR]   symbol:   method getStartDate()
+[ERROR]   location: variable request of type com.coffeecafe.coffee.dto.RegisterRequest
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
