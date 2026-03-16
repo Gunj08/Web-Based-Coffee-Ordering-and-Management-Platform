@@ -185,11 +185,6 @@ const WaiterDashboard = () => {
         }
     };
 
-        } finally {
-            setLoading(false);
-        }
-    };
-
     const updateOrderStatus = async (orderId, newStatus) => {
         try {
             const response = await fetch(`http://localhost:8080/api/orders/${orderId}/status?status=${newStatus}`, { method: 'POST' });
@@ -283,9 +278,7 @@ const WaiterDashboard = () => {
 
                 {loading ? (
                     <div style={{ textAlign: 'center', marginTop: '100px', color: '#6F4E37' }}>Syncing service data...</div>
-                ) : (
-                        </div>
-                    ) : activeTab === 'profile' ? (
+                ) : activeTab === 'profile' ? (
                         <div style={styles.card}>
                             <h2 style={{ color: colors.coffee, marginBottom: '20px' }}>Staff Information</h2>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
