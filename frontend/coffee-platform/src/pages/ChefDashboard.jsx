@@ -115,7 +115,6 @@ const ChefDashboard = () => {
             else if (activeTab === 'ready') fetchOrders(['READY']);
             else if (activeTab === 'history') fetchOrders(['SERVED', 'COMPLETED']);
             else if (activeTab === 'menu') fetchMenu();
-            else if (activeTab === 'map') fetchTables();
             // No fetch needed for 'profile' tab
         };
 
@@ -160,11 +159,7 @@ const ChefDashboard = () => {
 
     const fetchCafeDetails = async () => {
         const cafeId = profileData?.cafe?.id || profileData?.cafeId || (typeof profileData?.cafe === 'number' ? profileData.cafe : null);
-        console.log("Chef Dashboard: fetchCafeDetails for Cafe ID:", cafeId);
-        if (!cafeId) {
-            console.warn("Chef Dashboard: Cannot fetch cafe details - No Cafe ID found in profileData:", profileData);
-            return;
-        }
+        if (!cafeId) return;
         try {
             const [cafeRes, menuRes, tableRes] = await Promise.all([
                 fetch(`http://localhost:8080/api/cafes/${cafeId}`),
@@ -173,11 +168,7 @@ const ChefDashboard = () => {
             ]);
             if (cafeRes.ok) setCafeDetails(await cafeRes.json());
             if (menuRes.ok) setCafeMenuItems(await menuRes.json());
-            if (tableRes.ok) {
-                const tables = await tableRes.json();
-                console.log("Chef Dashboard: Fetched tables in cafeDetails:", tables);
-                setCafeTables(tables);
-            }
+            if (tableRes.ok) setCafeTables(await tableRes.json());
         } catch (error) {
             console.error('Chef Dashboard: Error fetching cafe details:', error);
         }
@@ -238,30 +229,6 @@ const ChefDashboard = () => {
             setMenuItems(data);
         } catch (error) {
             console.error("Chef Dashboard: Error fetching menu:", error);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const fetchTables = async () => {
-        const cafeId = profileData?.cafe?.id || profileData?.cafeId || (typeof profileData?.cafe === 'number' ? profileData.cafe : null);
-        console.log("Chef Dashboard: fetchTables for Cafe ID:", cafeId);
-        if (!cafeId) {
-            console.warn("Chef Dashboard: Cannot fetch tables - No Cafe ID found");
-            return;
-        }
-        setLoading(true);
-        try {
-            const response = await fetch(`http://localhost:8080/api/tables/cafe/${cafeId}`);
-            if (response.ok) {
-                const tables = await response.json();
-                console.log("Chef Dashboard: Fetched tables from dedicated endpoint:", tables);
-                setCafeTables(tables);
-            } else {
-                console.error("Chef Dashboard: Failed to fetch tables. Status:", response.status);
-            }
-        } catch (error) {
-            console.error("Chef Dashboard: Error fetching tables:", error);
         } finally {
             setLoading(false);
         }
@@ -337,9 +304,6 @@ const ChefDashboard = () => {
                     <div style={styles.navItem(activeTab === 'ready')} onClick={() => { setActiveTab('ready'); setSidebarOpen(false); }}>
                         <span style={{ fontSize: '18px' }}>✅</span> Ready for Pickup
                     </div>
-                    <div style={styles.navItem(activeTab === 'map')} onClick={() => { setActiveTab('map'); setSidebarOpen(false); }}>
-                        <span style={{ fontSize: '18px' }}>🏢</span> Floor Plan
-                    </div>
                     <div style={styles.navItem(activeTab === 'menu')} onClick={() => { setActiveTab('menu'); setSidebarOpen(false); }}>
                         <span style={{ fontSize: '18px' }}>📜</span> Menu Control
                     </div>
@@ -361,7 +325,6 @@ const ChefDashboard = () => {
                         <h1 style={styles.title}>
                             {activeTab === 'live' && 'Active Cooking Queue'}
                             {activeTab === 'ready' && 'Ready for Pickup'}
-                            {activeTab === 'map' && 'Floor Plan Overview'}
                             {activeTab === 'menu' && 'Menu Management'}
                             {activeTab === 'history' && 'Order History'}
                             {activeTab === 'profile' && 'My Profile'}
@@ -409,37 +372,6 @@ const ChefDashboard = () => {
                                     ))}
                                 </tbody>
                             </table>
-                        </div>
-                    ) : activeTab === 'map' ? (
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                                <button 
-                                    onClick={fetchTables} 
-                                    style={{ ...styles.button('secondary'), width: 'auto', padding: '10px 20px', margin: 0 }}
-                                >
-                                    🔄 Refresh Floor Plan
-                                </button>
-                            </div>
-                            <div style={styles.grid}>
-                                {cafeTables.length === 0 ? (
-                                    <div style={{ textAlign: 'center', gridColumn: '1/-1', padding: '50px', color: '#A67B5B', backgroundColor: 'white', borderRadius: '15px' }}>
-                                        No tables registered for this cafe or still loading...
-                                    </div>
-                                ) : (
-                                    cafeTables.map(table => (
-                                        <div key={table.id} style={{ textAlign: 'center' }}>
-                                            <div style={styles.tableNode(table.status)}>
-                                                <span style={{ fontSize: '12px', fontWeight: '600' }}>TABLE</span>
-                                                <span style={{ fontSize: '24px', fontWeight: '800' }}>{table.tableNumber}</span>
-                                                <span style={{ fontSize: '10px' }}>{table.capacity} Seats</span>
-                                            </div>
-                                            <div style={{ marginTop: '10px', fontSize: '12px', fontWeight: '700', color: table.status === 'Occupied' ? '#A67B5B' : '#999' }}>
-                                                {table.status.toUpperCase()}
-                                            </div>
-                                        </div>
-                                    ))
-                                )}
-                            </div>
                         </div>
                     ) : activeTab === 'profile' ? (
                         <div style={styles.card}>

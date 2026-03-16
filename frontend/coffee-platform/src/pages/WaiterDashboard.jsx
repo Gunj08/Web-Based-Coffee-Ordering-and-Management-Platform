@@ -83,7 +83,6 @@ const WaiterDashboard = () => {
     useEffect(() => {
         const loadInitialData = () => {
             if (activeTab === 'ready') fetchOrders(['READY']);
-            else if (activeTab === 'map') fetchTables();
             else if (activeTab === 'active') fetchOrders(['DELIVERED', 'SERVED']);
             else if (activeTab === 'history') fetchOrders(['COMPLETED']);
             // No fetch needed for 'profile' tab
@@ -186,19 +185,6 @@ const WaiterDashboard = () => {
         }
     };
 
-    const fetchTables = async () => {
-        const cafeId = profileData?.cafe?.id || profileData?.cafeId || (typeof profileData?.cafe === 'number' ? profileData.cafe : null);
-        if (!cafeId) {
-            console.warn("Waiter Dashboard: Cafe ID missing for table map fetch");
-            return;
-        }
-        setLoading(true);
-        try {
-            const response = await fetch(`http://localhost:8080/api/tables/cafe/${cafeId}`);
-            const data = await response.json();
-            setTables(data);
-        } catch (error) {
-            console.error("Waiter Dashboard: Error fetching tables:", error);
         } finally {
             setLoading(false);
         }
@@ -260,9 +246,6 @@ const WaiterDashboard = () => {
                     <div style={styles.navItem(activeTab === 'ready')} onClick={() => { setActiveTab('ready'); setSidebarOpen(false); }}>
                         <span style={{ fontSize: '18px' }}>🛎️</span> Service Ready
                     </div>
-                    <div style={styles.navItem(activeTab === 'map')} onClick={() => { setActiveTab('map'); setSidebarOpen(false); }}>
-                        <span style={{ fontSize: '18px' }}>🏢</span> Floor Plan
-                    </div>
                     <div style={styles.navItem(activeTab === 'active')} onClick={() => { setActiveTab('active'); setSidebarOpen(false); }}>
                         <span style={{ fontSize: '18px' }}>🏃</span> Active Tasks
                     </div>
@@ -283,7 +266,6 @@ const WaiterDashboard = () => {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                         <h1 style={styles.title}>
                             {activeTab === 'ready' && 'Ready for Service'}
-                            {activeTab === 'map' && 'Floor Plan Overview'}
                             {activeTab === 'active' && 'Tables Currently in Service'}
                             {activeTab === 'history' && 'Completed Tasks'}
                             {activeTab === 'profile' && 'My Profile'}
@@ -302,20 +284,6 @@ const WaiterDashboard = () => {
                 {loading ? (
                     <div style={{ textAlign: 'center', marginTop: '100px', color: '#6F4E37' }}>Syncing service data...</div>
                 ) : (
-                    activeTab === 'map' ? (
-                        <div style={{ ...styles.grid, gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', justifyItems: 'center' }}>
-                            {tables.map(table => (
-                                <div key={table.id} style={{ textAlign: 'center' }}>
-                                    <div style={styles.tableNode(table.status)}>
-                                        <span style={{ fontSize: '12px', fontWeight: '600' }}>TABLE</span>
-                                        <span style={{ fontSize: '24px', fontWeight: '800' }}>{table.tableNumber}</span>
-                                        <span style={{ fontSize: '10px' }}>{table.capacity} Seats</span>
-                                    </div>
-                                    <div style={{ marginTop: '10px', fontSize: '12px', fontWeight: '700', color: table.status === 'Occupied' ? '#A67B5B' : '#999' }}>
-                                        {table.status.toUpperCase()}
-                                    </div>
-                                </div>
-                            ))}
                         </div>
                     ) : activeTab === 'profile' ? (
                         <div style={styles.card}>
