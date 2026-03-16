@@ -235,6 +235,20 @@ const ChefDashboard = () => {
         }
     };
 
+    const fetchTables = async () => {
+        const cafeId = profileData?.cafe?.id || profileData?.cafeId || (typeof profileData?.cafe === 'number' ? profileData.cafe : null);
+        if (!cafeId) return;
+        setLoading(true);
+        try {
+            const response = await fetch(`http://localhost:8080/api/tables/cafe/${cafeId}`);
+            if (response.ok) setCafeTables(await response.json());
+        } catch (error) {
+            console.error("Chef Dashboard: Error fetching tables:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     const updateStatus = async (orderId, newStatus) => {
         try {
             const response = await fetch(`http://localhost:8080/api/orders/${orderId}/status?status=${newStatus}`, { method: 'POST' });
@@ -329,6 +343,7 @@ const ChefDashboard = () => {
                         <h1 style={styles.title}>
                             {activeTab === 'live' && 'Active Cooking Queue'}
                             {activeTab === 'ready' && 'Ready for Pickup'}
+                            {activeTab === 'map' && 'Floor Plan Overview'}
                             {activeTab === 'menu' && 'Menu Management'}
                             {activeTab === 'history' && 'Order History'}
                             {activeTab === 'profile' && 'My Profile'}
@@ -376,6 +391,27 @@ const ChefDashboard = () => {
                                     ))}
                                 </tbody>
                             </table>
+                        </div>
+                    ) : activeTab === 'map' ? (
+                        <div style={styles.grid}>
+                            {cafeTables.length === 0 ? (
+                                <div style={{ textAlign: 'center', gridColumn: '1/-1', padding: '50px', color: '#A67B5B', backgroundColor: 'white', borderRadius: '15px' }}>
+                                    No tables registered for this cafe.
+                                </div>
+                            ) : (
+                                cafeTables.map(table => (
+                                    <div key={table.id} style={{ textAlign: 'center' }}>
+                                        <div style={styles.tableNode(table.status)}>
+                                            <span style={{ fontSize: '12px', fontWeight: '600' }}>TABLE</span>
+                                            <span style={{ fontSize: '24px', fontWeight: '800' }}>{table.tableNumber}</span>
+                                            <span style={{ fontSize: '10px' }}>{table.capacity} Seats</span>
+                                        </div>
+                                        <div style={{ marginTop: '10px', fontSize: '12px', fontWeight: '700', color: table.status === 'Occupied' ? '#A67B5B' : '#999' }}>
+                                            {table.status.toUpperCase()}
+                                        </div>
+                                    </div>
+                                ))
+                            )}
                         </div>
                     ) : activeTab === 'profile' ? (
                         <div style={styles.card}>
