@@ -1,18 +1,40 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const PasswordReset = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1); // 1: Email, 2: New Password
   const [email, setEmail] = useState('');
   const [passwordData, setPasswordData] = useState({ newPass: '', confirmPass: '' });
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const emailParam = params.get('email');
+    if (emailParam) {
+      console.log("PasswordReset: Found email in URL:", emailParam);
+      setEmail(emailParam);
+      setStep(2); // Jump to new password step
+    }
+  }, [location]);
 
   // STEP 1: Handle sending the request (or simulating link sent)
-  const handleRequestLink = (e) => {
+  const handleRequestLink = async (e) => {
     e.preventDefault();
-    // In a real app, this sends an email. For now, we move to the next step
-    alert(`Reset link sent to ${email} (Simulated)`);
-    setStep(2);
+    try {
+      const response = await fetch(`http://localhost:8080/users/forgot-password?email=${encodeURIComponent(email)}`, {
+        method: 'POST'
+      });
+      if (response.ok) {
+        alert(`Reset link sent to ${email}`);
+        setStep(2);
+      } else {
+        const msg = await response.text();
+        alert(`Error: ${msg}`);
+      }
+    } catch (err) {
+      alert("Connection error. Is Spring Boot running?");
+    }
   };
 
   // STEP 2: Handle actual Database Update

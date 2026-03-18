@@ -84,39 +84,39 @@ public class DataInitializer implements CommandLineRunner {
             tableRepository.saveAll(Arrays.asList(table1, table2));
         }
 
-        if (orderRepository.count() == 0) {
-            Order order1 = new Order();
-            order1.setCustomerName("Rahul Sharma");
-            order1.setTableNumber("01");
-            order1.setItems(Arrays.asList("Espresso Classic", "Blueberry Muffin"));
-            order1.setStatus("PENDING");
-            order1.setTotalAmount(210.0);
-            order1.setOrderDate(LocalDateTime.now());
-            order1.setCafeId(cafe.getId());
-            order1.setCafeName(cafe.getCafeName());
-
-            Order order2 = new Order();
-            order2.setCustomerName("Sneha Gupta");
-            order2.setTableNumber("02");
-            order2.setItems(Arrays.asList("Latte Choco Pie"));
-            order2.setStatus("PREPARING");
-            order2.setTotalAmount(180.0);
-            order2.setOrderDate(LocalDateTime.now());
-            order2.setCafeId(cafe.getId());
-            order2.setCafeName(cafe.getCafeName());
-
-            Order order3 = new Order();
-            order3.setCustomerName("Amit Kumar");
-            order3.setTableNumber("01");
-            order3.setItems(Arrays.asList("Espresso Classic"));
-            order3.setStatus("READY");
-            order3.setTotalAmount(120.0);
-            order3.setOrderDate(LocalDateTime.now().minusMinutes(30));
-            order3.setCafeId(cafe.getId());
-            order3.setCafeName(cafe.getCafeName());
-
-            orderRepository.saveAll(Arrays.asList(order1, order2, order3));
-        }
+//        if (orderRepository.count() == 0) {
+//            Order order1 = new Order();
+//            order1.setCustomerName("Rahul Sharma");
+//            order1.setTableNumber("01");
+//            order1.setItems(Arrays.asList("Espresso Classic", "Blueberry Muffin"));
+//            order1.setStatus("PENDING");
+//            order1.setTotalAmount(210.0);
+//            order1.setOrderDate(LocalDateTime.now());
+//            order1.setCafeId(cafe.getId());
+//            order1.setCafeName(cafe.getCafeName());
+//
+//            Order order2 = new Order();
+//            order2.setCustomerName("Sneha Gupta");
+//            order2.setTableNumber("02");
+//            order2.setItems(Arrays.asList("Latte Choco Pie"));
+//            order2.setStatus("PREPARING");
+//            order2.setTotalAmount(180.0);
+//            order2.setOrderDate(LocalDateTime.now());
+//            order2.setCafeId(cafe.getId());
+//            order2.setCafeName(cafe.getCafeName());
+//
+//            Order order3 = new Order();
+//            order3.setCustomerName("Amit Kumar");
+//            order3.setTableNumber("01");
+//            order3.setItems(Arrays.asList("Espresso Classic"));
+//            order3.setStatus("READY");
+//            order3.setTotalAmount(120.0);
+//            order3.setOrderDate(LocalDateTime.now().minusMinutes(30));
+//            order3.setCafeId(cafe.getId());
+//            order3.setCafeName(cafe.getCafeName());
+//
+//            orderRepository.saveAll(Arrays.asList(order1, order2, order3));
+//        }
 
         // Initialize Test Users
         if (userRepository.findByEmail("test@chef.com").isEmpty()) {

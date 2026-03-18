@@ -98,7 +98,16 @@ const Header = ({ onNavClick }) => {
       <div style={styles.btnContainer}>
         {user ? (
           <>
-            <span style={{color: '#D4AF37', fontWeight: 'bold', cursor: 'pointer'}} onClick={() => navigate('/customer-profile')}>
+            <span 
+              style={{color: '#D4AF37', fontWeight: 'bold', cursor: 'pointer'}} 
+              onClick={() => {
+                const role = user.role ? user.role.toLowerCase() : '';
+                if (role === 'chef') navigate('/chef-dashboard');
+                else if (role === 'waiter') navigate('/waiter-dashboard');
+                else if (role === 'cafeowner') navigate('/owner-profile');
+                else navigate('/customer-profile');
+              }}
+            >
               Hi, {user.firstName}!
             </span>
             <button style={styles.loginBtn} onClick={handleLogout}>Logout</button>

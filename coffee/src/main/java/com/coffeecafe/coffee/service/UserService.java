@@ -39,6 +39,11 @@ public class UserService {
      * Handles User Registration with Multi-step data and File Upload
      */
     public void registerUser(RegisterRequest request, MultipartFile govtProof) {
+        // Check for existing email first
+        if (userRepository.findByEmail(request.getEmail()).isPresent()) {
+            throw new RuntimeException("Error: Email already in use: " + request.getEmail());
+        }
+
         User user = new User();
 
         // Step 1: Personal
@@ -152,15 +157,23 @@ public class UserService {
     }
 
     /**
-     * Handles first-time login password resets
+     * Handles password resets and first-time activation
      */
+    @org.springframework.transaction.annotation.Transactional
     public void updatePasswordAndActivate(String email, String newPassword) {
-        User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+        String cleanEmail = (email != null) ? email.trim() : "";
+        
+        // Find user case-insensitively just like in login
+        User user = userRepository.findByEmail(cleanEmail)
+                .orElseGet(() -> userRepository.findAll().stream()
+                        .filter(u -> cleanEmail.equalsIgnoreCase(u.getEmail()))
+                        .findFirst()
+                        .orElseThrow(() -> new RuntimeException("User not found with email: " + cleanEmail)));
 
         user.setPassword(passwordEncoder.encode(newPassword));
         user.setStatus("ACTIVE");
         userRepository.save(user);
+        System.out.println("Password updated and account activated for: " + user.getEmail());
     }
 
     /**
@@ -218,6 +231,10 @@ public class UserService {
                 userRepository.save(user);
             }
         });
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
  
 

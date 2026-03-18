@@ -17,6 +17,7 @@ public class User {
     private LocalDate dob;
     private String gender;
     private String role;
+    @Column(unique = true, nullable = false)
     private String email;
     private String password;
 

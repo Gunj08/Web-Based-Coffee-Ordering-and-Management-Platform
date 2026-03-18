@@ -125,22 +125,35 @@ public class UserController {
 
     @PostMapping("/set-password")
     public ResponseEntity<?> setPassword(@RequestBody Map<String, String> payload) {
-        String email = payload.get("email");
-        String newPassword = payload.get("password");
-        userService.updatePasswordAndActivate(email, newPassword);
-        return ResponseEntity.ok(new ApiResponse("Password updated successfully", true));
+        try {
+            String email = payload.get("email");
+            String newPassword = payload.get("password");
+            userService.updatePasswordAndActivate(email, newPassword);
+            return ResponseEntity.ok(new ApiResponse("Password updated successfully", true));
+        } catch (Exception e) {
+            return ResponseEntity.status(400).body(new ApiResponse(e.getMessage(), false));
+        }
     }
 
     @PostMapping("/forgot-password")
     public ResponseEntity<?> forgotPassword(@RequestParam("email") String email) {
-        emailService.sendResetLink(email);
-        return ResponseEntity.ok(new ApiResponse("Reset link sent successfully", true));
+        try {
+            emailService.sendResetLink(email);
+            return ResponseEntity.ok(new ApiResponse("Reset link sent successfully", true));
+        } catch (Exception e) {
+            return ResponseEntity.status(400).body(new ApiResponse("Failed to send reset link: " + e.getMessage(), false));
+        }
     }
 
     @PostMapping("/fix-passwords")
     public ResponseEntity<?> fixPasswords() {
         userService.fixExistingPasswords();
         return ResponseEntity.ok(new ApiResponse("Passwords fixed successfully", true));
+    }
+
+    @GetMapping("/debug/all")
+    public ResponseEntity<?> getAllUsersDebug() {
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 
 }

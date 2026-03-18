@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../responsive.css';
 
 const WaiterDashboard = () => {
     const navigate = useNavigate();
@@ -28,8 +29,7 @@ const WaiterDashboard = () => {
     const styles = {
         container: { display: 'flex', minHeight: '100vh', backgroundColor: '#f8f5f2', fontFamily: "'Poppins', sans-serif" },
         sidebar: {
-            width: '280px', backgroundColor: colors.latte, color: colors.coffee,
-            display: 'flex', flexDirection: 'column', position: 'fixed', height: '100vh',
+            backgroundColor: colors.latte, color: colors.coffee,
             boxShadow: '4px 0 15px rgba(0,0,0,0.08)'
         },
         sidebarHeader: {
@@ -45,7 +45,7 @@ const WaiterDashboard = () => {
             color: colors.coffee, fontWeight: active ? '700' : '500',
             fontSize: '15px'
         }),
-        content: { flex: 1, marginLeft: '280px', padding: '40px 60px', overflowY: 'auto' },
+        content: { padding: '40px 60px', overflowY: 'auto' },
         header: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' },
         title: { fontSize: '24px', color: colors.coffee, fontWeight: '700' },
         grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' },
@@ -194,7 +194,9 @@ const WaiterDashboard = () => {
         }
         setLoading(true);
         try {
-            const response = await fetch(`http://localhost:8080/api/tables/cafe/${cafeId}`);
+            const url = `http://localhost:8080/api/tables/cafe/${cafeId}`;
+            console.log(`Waiter Dashboard: Fetching tables from ${url}`);
+            const response = await fetch(url);
             const data = await response.json();
             setTables(data);
         } catch (error) {
@@ -273,12 +275,15 @@ const WaiterDashboard = () => {
                         <span style={{ fontSize: '18px' }}>👤</span> My Profile
                     </div>
                 </nav>
-                <div style={{ ...styles.navItem(false), marginBottom: '20px' }} onClick={() => navigate('/login')}>
+                <div style={{ ...styles.navItem(false), marginBottom: '20px' }} onClick={() => {
+                    localStorage.removeItem('user');
+                    navigate('/login');
+                }}>
                     <span>🚪</span> Logout
                 </div>
             </aside>
 
-            <div style={styles.content}>
+            <div className="dashboard-main" style={styles.content}>
                 <div style={styles.header}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                         <h1 style={styles.title}>
