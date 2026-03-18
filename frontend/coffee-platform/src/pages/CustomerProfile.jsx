@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
 import { useNavigate } from 'react-router-dom';
+import '../responsive.css';
 
 import {
   Store,
@@ -335,9 +335,8 @@ const MenuCardItem = ({ item, bag, handleAddToBag, handleRemoveFromBag, colors, 
 
 
 const CustomerProfile = () => {
-
   const navigate = useNavigate();
-
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [view, setView] = useState('cafe-list');
   const [selectedCafe, setSelectedCafe] = useState(null);
@@ -689,7 +688,7 @@ const filteredCafes = cafes.filter(cafe => {
 
     container: { display: 'flex', minHeight: '100vh', backgroundColor: '#f8f5f2' },
 
-    sidebar: { width: '280px', backgroundColor: colors.latte, color: colors.coffee, display: 'flex', flexDirection: 'column', position: 'fixed', height: '100vh' },
+    sidebar: { backgroundColor: colors.latte, color: colors.coffee, display: 'flex', flexDirection: 'column' },
 
     sidebarHeader: { padding: '40px 30px', fontSize: '24px', fontWeight: 'bold', borderBottom: '1px solid rgba(255,255,255,0.1)' },
 
@@ -703,7 +702,7 @@ const filteredCafes = cafes.filter(cafe => {
 
     }),
 
-    mainContent: { flex: 1, marginLeft: '280px', padding: '40px 60px' },
+    mainContent: { flex: 1, padding: '40px 60px' },
 
     card: { backgroundColor: colors.white, borderRadius: '16px', padding: '24px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', marginBottom: '20px' },
 
@@ -732,8 +731,12 @@ const filteredCafes = cafes.filter(cafe => {
   return (
 
     <div style={styles.container}>
+      <button className="sidebar-toggle-btn" onClick={() => setSidebarOpen(!sidebarOpen)} aria-label="Toggle sidebar">
+        {sidebarOpen ? '✕' : '☰'}
+      </button>
+      <div className={`sidebar-overlay ${sidebarOpen ? 'open' : ''}`} onClick={() => setSidebarOpen(false)} />
 
-      <aside style={styles.sidebar}>
+      <aside className={`dashboard-sidebar ${sidebarOpen ? 'open' : ''}`} style={styles.sidebar}>
 
         <div style={styles.sidebarHeader}>☕ Bookafé</div>
 
@@ -769,7 +772,7 @@ const filteredCafes = cafes.filter(cafe => {
 
 
 
-      <main style={styles.mainContent}>
+      <main className="dashboard-main" style={styles.mainContent}>
 
         {view === 'cafe-list' && (
   <>
@@ -831,7 +834,7 @@ const filteredCafes = cafes.filter(cafe => {
 
     <p style={{ color: '#666', marginBottom: '20px' }}>Showing {filteredCafes.length} cafes</p>
 
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '25px' }}>
+    <div className="cafe-card-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '25px' }}>
       {filteredCafes.map(cafe => (
         <div key={cafe.id} style={styles.card}>
            <div style={{ marginBottom: '20px' }}>
@@ -1057,7 +1060,7 @@ const filteredCafes = cafes.filter(cafe => {
 
 
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '25px', marginBottom: '100px' }}>
+            <div className="menu-card-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '25px', marginBottom: '100px' }}>
 
               {menuItems
 
@@ -1149,7 +1152,7 @@ const filteredCafes = cafes.filter(cafe => {
 
             {selectedOrderType.includes("Dine-In") && (
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '25px', marginBottom: '40px' }}>
+              <div className="cafe-card-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '25px', marginBottom: '40px' }}>
 
                 {filteredTables.map((table) => {
 
