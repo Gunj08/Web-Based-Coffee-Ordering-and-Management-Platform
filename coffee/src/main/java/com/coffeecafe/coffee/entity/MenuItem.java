@@ -12,6 +12,7 @@ public class MenuItem {
 
     private String itemName;
     private Double price;
+    @Column(columnDefinition = "TEXT")
     private String description;
     private String category;
     private boolean available = true;

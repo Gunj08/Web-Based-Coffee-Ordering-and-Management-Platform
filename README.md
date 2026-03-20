@@ -1,113 +1,94 @@
 # ☕ Bookafé - Artisan Coffee Platform
 
-Bookafé is a premium digital hideaway for modern coffee connoisseurs. This platform bridges the gap between artisan cafes and coffee lovers through a seamless, global cafe experience.
+Welcome to **Bookafé**, a premium digital ecosystem designed to bridge the gap between artisan cafes and coffee lovers. From high-quality visuals to real-time order tracking, Bookafé provides a seamless experience for customers, staff, and administrators alike.
 
 ---
 
-## 📂 Project Structure
+## 🗺️ Project Ecosystem at a Glance
 
-The project is split into two primary directories:
+Bookafé is more than just a website; it’s a full management suite.
 
-* **`/coffee`**: The backend built with **Java Spring Boot**. It manages user roles (Customer, Cafe Owner, Admin), data persistence, and identity verification.
-* **`/frontend`**: The user interface built with **React** and **Vite**. It features a modern, responsive design with a focus on ease of use and visual elegance.
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-* **Java 17+** (for the backend)
-* **Node.js & npm** (for the frontend)
-* **MySQL** (or equivalent database)
-
-### Backend Setup (`/coffee`)
-1.  Navigate to the folder: `cd coffee`
-2.  Configure your database settings in `src/main/resources/application.properties`.
-3.  Run the application:
-    ```bash
-    mvn spring-boot:run
-    ```
-4.  The backend API is hosted at `http://localhost:8080`.
-
-### Frontend Setup (`/frontend`)
-1.  Navigate to the folder: `cd frontend`
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-3.  Run the development server:
-    ```bash
-    npm run dev
-    ```
-4.  Access the site at `http://localhost:5173`.
+1.  **Customers** 🥐: Browse, Register (KYC), and Order.
+2.  **Admin** 📋: Verify Users (KYC), Manage Cafes, and Monitor Stats.
+3.  **Cafe Owners** 🏠: Setup Cafes, Manage Staff (Chefs/Waiters), and Control Menus.
+4.  **Chefs** 🍳: Real-time Kitchen Queue, Prep Management, and Stock Control.
+5.  **Waiters** 🛎️: Floor Plan Map, Ready Service Pickup, and Final Delivery.
 
 ---
 
-## 🛠️ Key Features
+## 🚀 Part 1: Technical Setup (For Developers)
 
-### 1. Multi-Step Registration
-* **Customer Sign-Up**: A 4-step wizard collecting personal info, academic details, account setup, and identity verification.
-* **File Upload**: Native support for uploading Government IDs (Aadhar/PAN) for manual verification.
-* **Approval Flow**: New users are moved to a `/waiting` room until the Admin approves their account.
+Follow these steps to get the engine running.
 
-### 2. Admin Portal
-* **Dashboard Stats**: Track total visitors, new messages, and registered users.
-* **Visual Analytics**: Interactive charts showing user activity and growth trends.
-* **Role Management**: Control access for Cafe Owners and Customers.
+### 1. Prerequisites
+- **Java 17+** | **Node.js (v18+)** | **MySQL Server**
 
-### 3. Professional UI/UX
-* **Premium Theme**: A "Matte Black" and "Artisan Gold" aesthetic throughout the footer and headers.
-* **Responsive Navigation**: Working Quick Links for smooth section scrolling on the Home page.
+### 2. Backend Setup (`/coffee`)
+1.  **Navigate**: `cd coffee`
+2.  **Database**: Open `src/main/resources/application.properties`. Update your MySQL URL, username, and password.
+3.  **Run**: `mvn spring-boot:run`
+    - *Api hosted at: `http://localhost:8080`*
 
----
-
-## 🎨 Theme & Styles
-* **Primary Color**: `#121212` (Premium Matte Black)
-* **Highlight Color**: `#D4AF37` (Artisan Gold)
-* **Font Family**: 'Poppins', 'Playfair Display', and 'Inter'
+### 3. Frontend Setup (`/frontend/coffee-platform`)
+1.  **Navigate**: `cd frontend/coffee-platform`
+2.  **Install**: `npm install`
+3.  **Run**: `npm run dev`
+    - *Site hosted at: `http://localhost:5173`*
 
 ---
 
-## 🗄️ Database Schema
+## 👥 Part 2: Role-Based User Guide (Step-by-Step)
 
-The backend uses a **One-to-Many** relationship between users and their academic history.
+### 1. 📋 Platform Administrator
+The Admin is the "Gatekeeper" of the platform.
+- **KYC Approval Portal**: Go to `/admin-portal` -> `Admin Approval`. Review the uploaded Government IDs (Aadhar/PAN).
+- **Approval Flow**: Once you click `Approve`, the system automatically generates a temporary password and emails it to the user.
+- **Analytics**: Monitor total visitors, active cafes, and user growth from the main dashboard.
 
-### 1. User Table
-Stores primary account and profile information.
+### 2. 🥐 The Customer
+- **Step 1: Multi-Step Signup**: Register at `/signup-customer`. You must provide personal info, address, and academic/work history.
+- **Step 2: KYC Upload**: Upload a clear photo of your Government ID.
+- **Step 3: Waiting Room**: You will be redirected to `/waiting` until the Admin approves your account.
+- **Step 4: Activation**: Check your email for the temporary password. Log in and set your permanent password at `/set-password`.
+- **Step 5: Ordering**: Browse the menu, select your items, choose a table number (or takeaway), and place your order.
 
-| Column | Type | Description |
-| :--- | :--- | :--- |
-| `id` | Long (PK) | Unique identifier for the user. |
-| `first_name` | String | User's first name. |
-| `email` | String (Unique) | Account email used for login. |
-| `role` | String | 'Customer', 'Cafe Owner', or 'Admin'. |
-| `status` | String | Current status (e.g., 'Pending', 'Active'). |
+### 3. 🏠 Cafe Owner
+- **Cafe Registration**: Setup your cafe profile at `/signup-cafe` with FSSAI and GST details.
+- **Staff Management**: From your **Owner Profile**, you can add **Chefs** and **Waiters**. They will receive their own login credentials.
+- **Menu Control**: Add items to your menu and set prices.
 
-### 2. AcademicInfo Table
-Stores the educational background provided during registration.
+### 4. 🍳 The Chef (Kitchen Central)
+- **Live Queue**: Open the `/chef` dashboard to see "Pending" orders.
+- **Cooking Flow**: 
+    1. Click `Start Preparing` to move the order to "Preparing" status.
+    2. Click `Mark as Ready` once the food is done. This notifies the Waiters.
+- **Stock Control**: Use the `Menu Control` tab to mark items as "Out of Stock" or "In Stock" in real-time if ingredients run out.
 
-| Column | Type | Description |
-| :--- | :--- | :--- |
-| `id` | Long (PK) | Unique identifier for the entry. |
-| `user_id` | Long (FK) | Links the entry back to a specific User. |
-| `institution` | String | Name of school or university. |
-| `degree` | String | Degree or qualification obtained. |
-| `year_of_passing` | String | The graduation year. |
-
----
-
-## 📋 API Documentation Snippet
-
-For developers to test the registration flow via Postman:
-
-**Endpoint:** `POST /users/register`  
-**Content-Type:** `multipart/form-data`
-
-| Part Name | Type | Description |
-| :--- | :--- | :--- |
-| `userData` | JSON (Blob) | Contains all text-based fields (names, email, academic array). |
-| `govtProof` | File | The uploaded ID image or PDF. |
+### 5. 🛎️ The Waiter (Hospitality)
+- **Floor Plan**: Use the `Floor Plan` tab to see which tables are **Occupied** 🟤 or **Available** ⚪.
+- **Service Ready**: When the Chef marks an order as "Ready", it appears in your `Service Ready` tab.
+- **Delivery Flow**: 
+    1. Click `Pick Up Order` when you take it from the kitchen.
+    2. Click `Mark as Served` once you deliver it to the table.
 
 ---
 
-© 2026 Bookafé. Crafted with ❤️ for coffee lovers.
+## 🔄 The Order Life-Cycle
+
+To understand how the project "handles" data, follow this status chain:
+`PENDING` (New Order) ➡️ `PREPARING` (Chef is cooking) ➡️ `READY` (Waiting for Waiter) ➡️ `DELIVERED` (With Waiter) ➡️ `SERVED` (Finished).
+
+---
+
+## 🛠️ Troubleshooting & Handling
+
+| Common Issue | Solution |
+| :--- | :--- |
+| **User can't log in** | Check if the Admin has approved them in the `/admin` portal. |
+| **Orders not showing** | Ensure the Chef/Waiter is assigned to the correct Cafe in their profile. |
+| **Email not arriving** | Check `application.properties` for correct SMTP (Gmail) settings. |
+| **Database missing** | Ensure you created `coffee_db` in MySQL before running the backend. |
+
+---
+
+© 2026 **Bookafé**. *Crafting the perfect coffee experience, one byte at a time.*
