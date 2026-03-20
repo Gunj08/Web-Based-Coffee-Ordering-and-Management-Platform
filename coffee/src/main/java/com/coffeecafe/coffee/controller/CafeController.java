@@ -85,9 +85,20 @@ public class CafeController {
 
     @DeleteMapping("/tables/delete/{id}")
     public ResponseEntity<?> deleteTable(@PathVariable("id") Long id) {
-
         tableRepository.deleteById(id);
         return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/tables/add")
+    public ResponseEntity<?> registerTable(@RequestBody TableEntity table) {
+        try {
+            table.setId(null);
+            TableEntity savedTable = tableRepository.save(table);
+            return ResponseEntity.ok(savedTable);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("Error: " + e.getMessage());
+        }
     }
 
     @DeleteMapping("/delete/{id}")
